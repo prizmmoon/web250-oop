@@ -40,3 +40,8 @@ class Bicycle
     $this->weight_kg = floatval($value) / 2.2046226218;
   }
 }
+
+class Unicycle extends Bicycle
+{
+  protected $wheels = 1;
+}
