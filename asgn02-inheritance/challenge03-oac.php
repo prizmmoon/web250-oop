@@ -16,7 +16,11 @@ class Bicycle
 
   public function wheel_details()
   {
-    return "It has {$this->wheels} wheels. <br>";
+    if ($this->wheels == 1) {
+      return "It has 1 wheel. <br>";
+    } else {
+      return "It has {$this->wheels} wheels. <br>";
+    }
   }
 
   public function set_weight_kg($value)
