@@ -1,6 +1,7 @@
 <?php
 
 // Base bird class
+
 class Bird
 {
   public $name;
