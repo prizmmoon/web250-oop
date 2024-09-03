@@ -38,3 +38,28 @@ class FlightlessBird extends Bird
     return parent::describe() . "This bird can run at {$this->runningSpeed} MPH!";
   }
 }
+
+// Usage examples (instanced objects)
+
+// Raptor objects
+$falcon = new RaptorBird();
+$falcon->name = "Falcon";
+$falcon->lifespan = 10;
+$falcon->wingspan = 3.5;
+
+$owl = new RaptorBird();
+$owl->name = "Owl";
+$owl->lifespan = 15;
+$owl->wingspan = 4.6;
+
+
+// Flightless bird objects
+$ostrich = new FlightlessBird();
+$ostrich->name = "Ostrich";
+$ostrich->lifespan = 50;
+$ostrich->runningSpeed = 40;
+
+$penguin = new FlightlessBird();
+$penguin->name = "Penguin";
+$penguin->lifespan = 20;
+$penguin->runningSpeed = 2;
