@@ -2,24 +2,41 @@
 
 class Bicycle
 {
-  var $brand;
-  var $model;
-  var $year;
-  var $description;
-  var $weight_kg;
+  public $brand;
+  public $model;
+  public $year;
+  public $description = "Used bicycles";
+  private $weight_kg = 0.0;
+  protected $wheels = 2;
 
-  function name()
+  public function name()
   {
     return $this->brand . " " . $this->model . " " . $this->year;
   }
 
-  function weight_lbs()
+  public function wheel_details()
   {
-    return floatval($this->weight_kg) * 2.2046226218;
+    return "It has {$this->wheels} wheels";
   }
 
-  function set_weight_lbs($value)
+  public function set_weight_kg($value)
+  {
+    $this->weight_kg = floatval($value);
+  }
+
+  public function weight_lbs()
+  {
+    $weight_lbs = floatval($this->weight_kg) * 2.2046226218;
+    return $weight_lbs . " lbs";
+  }
+
+  public function set_weight_lbs($value)
   {
     $this->weight_kg = floatval($value) / 2.2046226218;
+  }
+
+  public function get_weight_kg()
+  {
+    return $this->weight_kg . " kgs";
   }
 }
