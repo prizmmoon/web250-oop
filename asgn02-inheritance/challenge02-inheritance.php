@@ -10,7 +10,7 @@ class Bird
   // Method to describe the bird
   public function describe()
   {
-    return "This is a {$this->name} with a lifespan of {$this->lifespan} years";
+    return "This is a {$this->name} with a lifespan of {$this->lifespan} years.<br>";
   }
 }
 
@@ -23,7 +23,7 @@ class RaptorBird extends Bird
   // Override the describe method
   public function describe()
   {
-    return parent::describe() . "This bird has a wingspan of {$this->wingspan} feet.";
+    return parent::describe() . "This raptor has a wingspan of {$this->wingspan} feet.<br>";
   }
 }
 
@@ -36,7 +36,7 @@ class FlightlessBird extends Bird
   // Override the describe method
   public function describe()
   {
-    return parent::describe() . "This bird can run at {$this->runningSpeed} MPH!";
+    return parent::describe() . "This flightless can run at {$this->runningSpeed} MPH!<br>";
   }
 }
 
@@ -64,3 +64,9 @@ $penguin = new FlightlessBird();
 $penguin->name = "Penguin";
 $penguin->lifespan = 20;
 $penguin->runningSpeed = 2;
+
+// Display the descriptions
+echo $falcon->describe() . "<br>";
+echo $owl->describe() . "<br>";
+echo $ostrich->describe() . "<br>";
+echo $penguin->describe() . "<br>";
