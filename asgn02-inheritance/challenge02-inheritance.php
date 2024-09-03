@@ -10,7 +10,7 @@ class Bird
   // Method to describe the bird
   public function describe()
   {
-    return "This is a {$this->name} with a lifespan of {$this->lifespan} years.<br>";
+    return "This is a(n) {$this->name} with a lifespan of {$this->lifespan} years.<br>";
   }
 }
 
@@ -36,7 +36,7 @@ class FlightlessBird extends Bird
   // Override the describe method
   public function describe()
   {
-    return parent::describe() . "This flightless can run at {$this->runningSpeed} MPH!<br>";
+    return parent::describe() . "This flightless bird can run at {$this->runningSpeed} MPH!<br>";
   }
 }
 
