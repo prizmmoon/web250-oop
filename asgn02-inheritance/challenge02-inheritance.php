@@ -3,13 +3,35 @@
 // Base bird class
 class Bird
 {
-  public $name;
-  public $lifespan;
+  private $name;
+  private $lifespan;
 
   // Method to describe the bird
-  public function describe()
+  protected function describe()
   {
     return "This is a {$this->name} with a lifespan of {$this->lifespan} years.<br>";
+  }
+
+  // Setter and getter for name
+  public function set_name($value)
+  {
+    $this->name = $value;
+  }
+
+  public function get_name()
+  {
+    return $this->name;
+  }
+
+  // Setter and getter for lifespan
+  public function set_lifespan($value)
+  {
+    $this->lifespan = $value;
+  }
+
+  public function get_lifespan()
+  {
+    return $this->lifespan;
   }
 }
 
@@ -17,7 +39,13 @@ class Bird
 
 class RaptorBird extends Bird
 {
-  public $wingspan;
+  private $wingspan;
+
+  // Setter for wingspan
+  public function set_wingspan($value)
+  {
+    $this->wingspan = $value;
+  }
 
   // Override the describe method
   public function describe()
@@ -30,12 +58,18 @@ class RaptorBird extends Bird
 
 class FlightlessBird extends Bird
 {
-  public $runningSpeed;
+  private $runningSpeed;
+
+  // Setter for running speed
+  public function set_runningSpeed($value)
+  {
+    $this->runningSpeed = $value;
+  }
 
   // Override the describe method
   public function describe()
   {
-    return parent::describe() . "This flightless can run at {$this->runningSpeed} MPH!<br>";
+    return parent::describe() . "This flightless bird can run at {$this->runningSpeed} MPH!<br>";
   }
 }
 
@@ -43,26 +77,25 @@ class FlightlessBird extends Bird
 
 // Raptor objects
 $falcon = new RaptorBird();
-$falcon->name = "Falcon";
-$falcon->lifespan = 10;
-$falcon->wingspan = 3.5;
+$falcon->set_name("Falcon");
+$falcon->set_lifespan(10);
+$falcon->set_wingspan(3.5);
 
 $owl = new RaptorBird();
-$owl->name = "Owl";
-$owl->lifespan = 15;
-$owl->wingspan = 4.6;
-
+$owl->set_name("Owl");
+$owl->set_lifespan(15);
+$owl->set_wingspan(4.6);
 
 // Flightless bird objects
 $ostrich = new FlightlessBird();
-$ostrich->name = "Ostrich";
-$ostrich->lifespan = 50;
-$ostrich->runningSpeed = 40;
+$ostrich->set_name("Ostrich");
+$ostrich->set_lifespan(50);
+$ostrich->set_runningSpeed(40);
 
 $penguin = new FlightlessBird();
-$penguin->name = "Penguin";
-$penguin->lifespan = 20;
-$penguin->runningSpeed = 2;
+$penguin->set_name("Penguin");
+$penguin->set_lifespan(20);
+$penguin->set_runningSpeed(2);
 
 // Display the descriptions
 echo $falcon->describe() . "<br>";
