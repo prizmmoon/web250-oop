@@ -3,12 +3,24 @@
 // Base bicycle class
 class Bicycle
 {
+  public static $instance_count = 0;
+
   public $brand;
   public $model;
   public $year;
   public $description = "Used bicycles";
   private $weight_kg = 0.0;
   protected $wheels = 2;
+
+  // Static method that creates a class
+  public static function create()
+  {
+    $className = get_called_class();
+    $object = new $className;
+
+    self::$instance_count++;
+    return $object;
+  }
 
   // Method for returning the brand + model + year
   public function name()
