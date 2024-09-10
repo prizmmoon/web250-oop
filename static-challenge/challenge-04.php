@@ -3,6 +3,7 @@
 // Base bicycle class
 class Bicycle
 {
+  // Initialize vars and constants
   public static $instance_count = 0;
 
   public $brand;
@@ -73,22 +74,29 @@ class Unicycle extends Bicycle
   protected static $wheels = 1;
 }
 
+// Instantiate a bike object
 $cannondale = new Bicycle;
 $cannondale->brand = "Cannondale";
 $cannondale->model = "Trail";
 $cannondale->year = "2020";
 $cannondale->set_weight_kg(13);
 
+// Print the bike and uni instance counts
 echo "Bicycle count: " . Bicycle::$instance_count . "<br>";
 echo "Unicycle count: " . Unicycle::$instance_count . "<br>";
 
+// Create a bike and unicycle using method
 $bike = Bicycle::create();
 $uni = Unicycle::create();
 
+// Print the bike and uni instance counts
 echo "Bicycle count: " . Bicycle::$instance_count . "<br>";
 echo "Unicycle count: " . Unicycle::$instance_count . "<br>";
 
+// Prints the categories
 echo "<hr>";
 echo "Categories: " . implode(", ", Bicycle::CATEGORIES) . "<br>";
+
+// Prints the bicycle's category
 $cannondale->category = Bicycle::CATEGORIES[0];
 echo "Category: " . $cannondale->category . "<br>";
