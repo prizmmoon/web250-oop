@@ -9,8 +9,11 @@ class Bicycle
   public $model;
   public $year;
   public $description = "Used bicycles";
+  public $category;
   private $weight_kg = 0.0;
   protected $wheels = 2;
+
+  public const CATEGORIES = ["Road", "Mountain", "Hybrid", "Cruiser", "City", "BMX"];
 
   // Static method that creates a class
   public static function create()
@@ -84,3 +87,8 @@ $uni = Unicycle::create();
 
 echo "Bicycle count: " . Bicycle::$instance_count . "<br>";
 echo "Unicycle count: " . Unicycle::$instance_count . "<br>";
+
+echo "<hr>";
+echo "Categories: " . implode(", ", Bicycle::CATEGORIES) . "<br>";
+$cannondale->category = Bicycle::CATEGORIES[0];
+echo "Category: " . $cannondale->category . "<br>";
