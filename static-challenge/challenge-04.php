@@ -11,7 +11,7 @@ class Bicycle
   public $description = "Used bicycles";
   public $category;
   private $weight_kg = 0.0;
-  protected $wheels = 2;
+  protected static $wheels = 2;
 
   public const CATEGORIES = ["Road", "Mountain", "Hybrid", "Cruiser", "City", "BMX"];
 
@@ -32,12 +32,12 @@ class Bicycle
   }
 
   // Method for returning the wheel number
-  public function wheel_details()
+  public static function wheel_details()
   {
-    if ($this->wheels == 1) {
+    if (static::$wheels == 1) {
       return "It has 1 wheel. <br>";
     } else {
-      return "It has {$this->wheels} wheels. <br>";
+      return "It has " . static::$wheels . " wheels. <br>";
     }
   }
 
@@ -70,7 +70,7 @@ class Bicycle
 // Unicycle subclass with 1 wheel
 class Unicycle extends Bicycle
 {
-  protected $wheels = 1;
+  protected static $wheels = 1;
 }
 
 $cannondale = new Bicycle;
