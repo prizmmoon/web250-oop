@@ -69,3 +69,18 @@ class Unicycle extends Bicycle
 {
   protected $wheels = 1;
 }
+
+$cannondale = new Bicycle;
+$cannondale->brand = "Cannondale";
+$cannondale->model = "Trail";
+$cannondale->year = "2020";
+$cannondale->set_weight_kg(13);
+
+echo "Bicycle count: " . Bicycle::$instance_count . "<br>";
+echo "Unicycle count: " . Unicycle::$instance_count . "<br>";
+
+$bike = Bicycle::create();
+$uni = Unicycle::create();
+
+echo "Bicycle count: " . Bicycle::$instance_count . "<br>";
+echo "Unicycle count: " . Unicycle::$instance_count . "<br>";
