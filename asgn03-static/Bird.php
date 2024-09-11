@@ -4,15 +4,15 @@ class Bird
 {
     public static $instanceCount = 0;
 
-    protected $habitat;
-    protected $food;
-    protected static $nesting = "tree";
-    protected $conservation;
-    protected static $song = "chirp";
-    protected static $flying = "yes";
-    protected static $eggNum = "one massive egg";
+    public $habitat;
+    public $food;
+    public $nesting = "tree";
+    public $conservation;
+    public $song = "chirp";
+    public static $flying = "yes";
+    public static $eggNum = "one massive egg";
 
-    protected function canFly()
+    public function canFly()
     {
         $flyingString = static::$flying == "yes" ? " bird can fly" : "cannot fly and is stuck on the ground";
 
@@ -31,15 +31,15 @@ class Bird
 
 class YellowBelliedFlyCatcher extends Bird
 {
-    private $name = "yellow-bellied flycatcher";
-    private $diet = "mostly insects.";
-    protected static $song = "flat chilk";
-    protected static $eggNum = "3-4, sometimes 5";
+    public $name = "yellow-bellied flycatcher";
+    public $diet = "mostly insects.";
+    public $song = "flat chilk";
+    public static $eggNum = "3-4, sometimes 5";
 }
 
 class Kiwi extends Bird
 {
-    private $name = "kiwi";
-    private $diet = "omnivorous";
-    protected static $flying = "no";
+    public $name = "kiwi";
+    public $diet = "omnivorous";
+    public static $flying = "no";
 }
