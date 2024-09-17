@@ -7,25 +7,25 @@ class Bird
 
   public function __construct($args = [])
   {
-    $this->commonName = $args["common name"] ?? NULL;
-    $this->latinName = $args["latin name"] ?? NULL;
+    $this->commonName = $args["commonName"] ?? NULL;
+    $this->latinName = $args["latinName"] ?? NULL;
   }
 }
 
 $flycatcher = new Bird([
-  "common name" => "Acadian Flycatcher",
-  "latin name" => "Empidonax virescens"
+  "commonName" => "Acadian Flycatcher",
+  "latinName" => "Empidonax virescens"
 ]);
 
 $wren = new Bird([
-  "common name" => "Carolina Wren",
-  "latin name" => "Thyrothorus ludovicianus"
+  "commonName" => "Carolina Wren",
+  "latinName" => "Thyrothorus ludovicianus"
 ]);
 
-echo "Common name: " . $flycatcher->$commonName . "<br>";
-echo "Latin name: " . $flycatcher->$latinName . "<br>";
+echo "Common name: " . $flycatcher->commonName . "<br>";
+echo "Latin name: " . $flycatcher->latinName . "<br>";
 
 echo "<hr>";
 
-echo "Common name: " . $wren->$commonName . "<br>";
-echo "Latin name: " . $wren->$latinName . "<br>";
+echo "Common name: " . $wren->commonName . "<br>";
+echo "Latin name: " . $wren->latinName . "<br>";
