@@ -8,3 +8,8 @@ function my_autoload($class)
 }
 
 spl_autoload_register('my_autoload');
+
+
+$flycatcher = new Bird(["commonName" => "Acadian Flycatcher"]);
+
+echo $flycatcher->commonName;
