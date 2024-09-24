@@ -37,7 +37,7 @@ class Bicycle
     5 => "Like New"
   ];
 
-  public function __construct()
+  public function __construct($args = [])
   {
     $this->brand = $args["brand"] ?? "";
     $this->model = $args["model"] ?? "";
@@ -49,5 +49,11 @@ class Bicycle
     $this->price = $args["price"] ?? 0;
     $this->weight_kg = $args["weight_kg"] ?? 0;
     $this->condition_id = $args["condition_id"] ?? 3;
+
+    foreach ($args as $k => $v) {
+      if (property_exists($this, $k)) {
+        $this->$k = $v;
+      }
+    }
   }
 }
