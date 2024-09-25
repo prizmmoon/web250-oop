@@ -1,14 +1,21 @@
 <?php
 
-class Bird {
+class Bird
+{
 
-/*
+  /*
 Use the wnc-birds.csv file to create the properties
 Make all of the properties public.
 */
 
+  public $common_name;
+  public $habitat;
+  public $food;
+  public $nest_placement;
+  public $behavior;
+  public $conservation_id;
+  public $backyard_tips;
 
- 
   /*
   Create a protected constant array called CONSERVATION_OPTIONS using the following scale.
   Use the CONDITION_OPTIONS from the bicycle.class.php file
@@ -19,9 +26,9 @@ Make all of the properties public.
   4 = Extinct
   */
 
- 
 
- /*
+
+  /*
    - Create a public __contruct that accepts a list of $args[]
    - Use the Null coalescing operator
    - Create a default value of 1 for conservation_id
@@ -29,14 +36,10 @@ Make all of the properties public.
 
 
 
-/*
+  /*
   Create a public method called conservation(). This method should mimic the
     public function condition() from the bicycle.class.php file
 
 
 */
-
-
 }
-
-?>

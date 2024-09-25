@@ -41,7 +41,7 @@ Use a table border of 1 to make the display easier to read.
     "nest_placement" => "Cavity",
     "behavior" => "Ground Forager",
     "conservation_id" => "1",
-    "backyard" => "Carolina Wrens visit suet-filled feeders during winter."
+    "backyard_tips" => "Carolina Wrens visit suet-filled feeders during winter."
   ];
 
   foreach ($bird_array as $args) {
@@ -53,7 +53,7 @@ Use a table border of 1 to make the display easier to read.
       <td><?php echo h($bird->nest_placement); ?></td>
       <td><?php echo h($bird->behavior); ?></td>
       <td><?php echo h($bird->conservation_id); ?></td>
-      <td><?php echo h($bird->backyard); ?></td>
+      <td><?php echo h($bird->backyard_tips); ?></td>
     </tr>
   <?php } ?>
 
