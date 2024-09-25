@@ -8,10 +8,7 @@ include(SHARED_PATH . '/public_header.php');
 <p>This is a short list -- start your birding!</p>
 
 
-/*
-Create a table. The header should reflect the headings in the wnc-birds.csv class.
-Use a table border of 1 to make the display easier to read.
-*/
+
 
 <table id="inventory">
   <tr></tr>
@@ -25,6 +22,11 @@ Use a table border of 1 to make the display easier to read.
   <tr></tr>
 
   <?php
+
+  /*
+  Create a table. The header should reflect the headings in the wnc-birds.csv class.
+  Use a table border of 1 to make the display easier to read.
+  */
 
   $parser = new ParseCSV(PRIVATE_PATH . '/wnc-birds.csv');
   $bird_array = $parser->parse();
