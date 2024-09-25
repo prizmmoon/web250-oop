@@ -53,12 +53,20 @@ Make all of the properties public.
       if (property_exists($this, $k)) {
         $this->$k = $v;
       }
+    }
   }
 
   /*
   Create a public method called conservation(). This method should mimic the
     public function condition() from the bicycle.class.php file
+  */
 
-
-*/
+  public function conservation()
+  {
+    if ($this->conservation_id > 0) {
+      return self::CONSERVATION_OPTIONS[$this->conservation_id];
+    } else {
+      return "Unknown";
+    }
+  }
 }
