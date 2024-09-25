@@ -44,6 +44,12 @@ Use a table border of 1 to make the display easier to read.
     "backyard_tips" => "Carolina Wrens visit suet-filled feeders during winter."
   ];
 
+  /*
+  Create a table row that lists out all of the bird
+  properties.
+
+  */
+
   foreach ($bird_array as $args) {
     $bird = new Bird($args); ?>
     <tr>
@@ -56,13 +62,6 @@ Use a table border of 1 to make the display easier to read.
       <td><?php echo h($bird->backyard_tips); ?></td>
     </tr>
   <?php } ?>
-
-  /*
-  Create a table row that lists out all of the bird
-  properties.
-
-  */
-
 </table>
 
 <?php include(SHARED_PATH . '/public_footer.php'); ?>
