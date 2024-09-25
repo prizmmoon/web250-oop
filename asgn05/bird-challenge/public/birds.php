@@ -7,6 +7,18 @@
 <h2>Bird inventory</h2>
 <p>This is a short list -- start your birding!</p>
 
+<table id="inventory">
+  <tr></tr>
+    <th>Common Name</th>
+    <th>Habitat</th>
+    <th>Food</th>
+    <th>Nest Placement</th>
+    <th>Behavior</th>
+    <th>Conservation ID</th>
+    <th>Backyard Tips</th>
+  <tr></tr>
+</table>
+
 /* 
   Create a table. The header should reflect the headings in the wnc-birds.csv class.
   Use a table border of 1 to make the display easier to read.
