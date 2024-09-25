@@ -26,7 +26,12 @@ Make all of the properties public.
   4 = Extinct
   */
 
-
+  protected const CONSERVATION_OPTIONS = [
+    1 => "Low concern",
+    2 => "Moderate concern",
+    3 => "Extreme concern",
+    4 => "Extinct"
+  ];
 
   /*
    - Create a public __contruct that accepts a list of $args[]
@@ -34,7 +39,21 @@ Make all of the properties public.
    - Create a default value of 1 for conservation_id
  */
 
+  public function __construct($args = [])
+  {
+    $this->common_name = $args["common_name"] ?? "";
+    $this->habitat = $args["habitat"] ?? "";
+    $this->food = $args["food"] ?? "";
+    $this->nest_placement = $args["nest_placement"] ?? "";
+    $this->behavior = $args["behavior"] ?? "";
+    $this->conservation_id = $args["conservation_id"] ?? "";
+    $this->backyard_tips = $args["backyard_tips"] ?? "";
 
+    foreach ($args as $k => $v) {
+      if (property_exists($this, $k)) {
+        $this->$k = $v;
+      }
+  }
 
   /*
   Create a public method called conservation(). This method should mimic the
