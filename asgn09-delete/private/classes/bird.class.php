@@ -73,8 +73,24 @@ class Bird extends DatabaseObject
     return $object;
   }
 
+  protected function validate()
+  {
+    $this->errors = [];
+
+    if (is_blank($this->common_name)) {
+      $this->errors[] = "Bird name cannot be blank.";
+    }
+
+    return $this->errors;
+  }
+
   protected function create()
   {
+    $this->validate();
+    if (!empty($this->errors)) {
+      return false;
+    }
+
     $attributes = $this->sanitized_attributes();
 
     $sql = "INSERT INTO birds (";
@@ -92,6 +108,11 @@ class Bird extends DatabaseObject
 
   protected function update()
   {
+    $this->validate();
+    if (!empty($this->errors)) {
+      return false;
+    }
+
     $attributes = $this->sanitized_attributes();
     $attribute_pairs = [];
     foreach ($attributes as $key => $value) {
@@ -184,17 +205,5 @@ class Bird extends DatabaseObject
     } else {
       return "Unknown";
     }
-  }
-
-
-  protected function validate()
-  {
-    $this->errors = [];
-
-    if (is_blank($this->common_name)) {
-      $this->errors[] = "Bird name cannot be blank.";
-    }
-
-    return $this->errors;
   }
 }
