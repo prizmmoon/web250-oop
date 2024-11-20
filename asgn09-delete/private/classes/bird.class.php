@@ -170,6 +170,15 @@ class Bird extends DatabaseObject
     return $sanitized;
   }
 
+  public function delete()
+  {
+    $sql = "DELETE FROM birds ";
+    $sql .= "WHERE ID='" . self::$database->escape_string($this->id) . "' ";
+    $sql .= "LIMIT 1";
+    $result = self::$database->query($sql);
+    return $result;
+  }
+
   // ------------ END OF ACTIVE RECORD CODE ------------  
 
   public $id;
