@@ -30,7 +30,7 @@ if (is_post_request()) {
 ?>
 
 <?php $page_title = 'Create Bird'; ?>
-<?php include(SHARED_PATH . '/staff_header.php'); ?>
+<?php include(SHARED_PATH . '/public_header.php'); ?>
 
 <div id="content">
 
@@ -54,4 +54,4 @@ if (is_post_request()) {
 
 </div>
 
-<?php include(SHARED_PATH . '/staff_footer.php'); ?>
+<?php include(SHARED_PATH . '/public_footer.php'); ?>

@@ -1,3 +1,5 @@
+<?php ini_set('display_errors', 1); ?>
+
 <?php require_once('../../private/initialize.php'); ?>
 
 <?php
@@ -7,7 +9,7 @@ $birds = Bird::find_all();
 
 ?>
 <?php $page_title = 'Birds'; ?>
-<?php include(SHARED_PATH . '/staff_header.php'); ?>
+<?php include(SHARED_PATH . '/public_header.php'); ?>
 
 <div id="content">
   <div class="birds listing">
@@ -47,4 +49,4 @@ $birds = Bird::find_all();
 
 </div>
 
-<?php include(SHARED_PATH . '/staff_footer.php'); ?>
+<?php include(SHARED_PATH . '/public_footer.php'); ?>
