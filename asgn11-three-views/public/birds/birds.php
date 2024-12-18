@@ -5,6 +5,11 @@ include(SHARED_PATH . '/public_header.php');
 ?>
 
 <h2>Bird inventory</h2>
+<ul>
+  <li><a href="../login.php">Log in</a></li>
+  <li><a href="../signup.php">Sign Up</a></li>
+</ul>
+
 <p>This is a short list -- start your birding!</p>
 
 

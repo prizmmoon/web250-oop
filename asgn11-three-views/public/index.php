@@ -4,8 +4,8 @@
 
 
 <ul>
-  <li><a href="<?php echo url_for('/birds.php'); ?>">View Our Inventory</a></li>
-  <li><a href="<?php echo url_for('/about.php'); ?>">About Us</a></li>
+  <li><a href="<?php echo url_for('/birds/birds.php'); ?>">View Our Inventory</a></li>
+  <li><a href="<?php echo url_for('/birds/about.php'); ?>">About Us</a></li>
 </ul>
 
 
