@@ -7,7 +7,7 @@ $users = User::find_all();
 
 ?>
 <?php $page_title = 'Users'; ?>
-<?php include(SHARED_PATH . '/staff_header.php'); ?>
+<?php include(SHARED_PATH . '/public_header.php'); ?>
 
 <div id="content">
   <div class="users listing">
