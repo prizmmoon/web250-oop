@@ -4,7 +4,7 @@
 
 $id = $_GET['id'] ?? '1'; // PHP > 7.0
 
-$member = Member::find_by_id($id);
+$user = User::find_by_id($id);
 
 /*
   Use the bicycles/staff/edit.php file as a guide 

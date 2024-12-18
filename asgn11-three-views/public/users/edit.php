@@ -8,7 +8,7 @@ require_once('../../../private/initialize.php');
   Be sure to include the display_errors() function.
 */
 
-$page_title = 'Edit Member';
+$page_title = 'Edit User';
 include(SHARED_PATH . '/public_header.php');
 
 
