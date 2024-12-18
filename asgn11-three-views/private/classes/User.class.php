@@ -15,6 +15,7 @@ class User extends DatabaseObject
   public $password;
   public $confirm_password;
   protected $password_required = true;
+  public $user_level = 'm';
 
   public function __construct($args = [])
   {
