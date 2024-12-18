@@ -1,6 +1,6 @@
 <?php
 
-require_once('../../../private/initialize.php');
+require_once('../../private/initialize.php');
 
 /* 
   Use the bicycles/staff/delete.php file as a guide 

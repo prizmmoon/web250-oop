@@ -1,6 +1,6 @@
 <?php
 
-require_once('../../../private/initialize.php');
+require_once('../../private/initialize.php');
 
 /* 
   Use the bicycles/staff/new.php file as a guide 
