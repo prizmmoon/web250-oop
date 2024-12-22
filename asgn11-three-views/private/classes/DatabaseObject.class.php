@@ -8,8 +8,6 @@ class DatabaseObject
   static protected $db_columns = [];
   public $errors = [];
 
-  public $id = "";
-
   static public function set_database($database)
   {
     self::$database = $database;
@@ -49,7 +47,7 @@ class DatabaseObject
 
   static public function find_by_id($id)
   {
-    $sql = "SELECT * FROM birds " . static::$table_name . " ";
+    $sql = "SELECT * FROM sabirds " . static::$table_name . " ";
     $sql .= "WHERE id='" . self::$database->escape_string($id) . "'";
     $obj_array = static::find_by_sql($sql);
     if (!empty($obj_array)) {
@@ -89,7 +87,7 @@ class DatabaseObject
 
     $attributes = $this->sanitized_attributes();
 
-    $sql = "INSERT INTO birds " . static::$table_name . "( ";
+    $sql = "INSERT INTO sabirds " . static::$table_name . "( ";
     $sql .= join(', ', array_keys($attributes));
     $sql .= ") VALUES ('";
     $sql .= join("', '", array_values($attributes));
@@ -115,7 +113,7 @@ class DatabaseObject
       $attribute_pairs[] = "{$key}='{$value}'";
     }
 
-    $sql = "UPDATE birds SET " . static::$table_name . " ";
+    $sql = "UPDATE sabirds SET " . static::$table_name . " ";
     $sql .= join(', ', $attribute_pairs);
     $sql .= " WHERE id='" . self::$database->escape_string($this->id) . "' ";
 
@@ -168,7 +166,7 @@ class DatabaseObject
 
   public function delete()
   {
-    $sql = "DELETE FROM birds " . static::$table_name . " ";
+    $sql = "DELETE FROM sabirds " . static::$table_name . " ";
     $sql .= "WHERE ID='" . self::$database->escape_string($this->id) . "' ";
     $sql .= "LIMIT 1";
     $result = self::$database->query($sql);

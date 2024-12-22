@@ -19,6 +19,7 @@ class User extends DatabaseObject
 
   public function __construct($args = [])
   {
+    $this->id = $args['id'] ?? '';
     $this->first_name = $args['first_name'] ?? '';
     $this->last_name = $args['last_name'] ?? '';
     $this->email = $args['email'] ?? '';

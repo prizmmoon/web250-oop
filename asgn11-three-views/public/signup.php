@@ -17,6 +17,8 @@ if (is_post_request()) {
     redirect_to(url_for('/index.php'));
   } else {
     // Show errors
+    var_dump($user);
+    var_dump($result);
   }
 } else {
   // Display the form
