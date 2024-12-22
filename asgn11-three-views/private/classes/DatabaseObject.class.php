@@ -47,7 +47,7 @@ class DatabaseObject
 
   static public function find_by_id($id)
   {
-    $sql = "SELECT * FROM sabirds " . static::$table_name . " ";
+    $sql = "SELECT * FROM " . static::$table_name . " ";
     $sql .= "WHERE id='" . self::$database->escape_string($id) . "'";
     $obj_array = static::find_by_sql($sql);
     if (!empty($obj_array)) {
@@ -87,7 +87,7 @@ class DatabaseObject
 
     $attributes = $this->sanitized_attributes();
 
-    $sql = "INSERT INTO sabirds " . static::$table_name . "( ";
+    $sql = "INSERT INTO " . static::$table_name . "( ";
     $sql .= join(', ', array_keys($attributes));
     $sql .= ") VALUES ('";
     $sql .= join("', '", array_values($attributes));
@@ -96,6 +96,8 @@ class DatabaseObject
     $result = self::$database->query($sql);
     if ($result) {
       $this->id = self::$database->insert_id;
+    } else {
+      die("Insert query failed: " . self::$database->error);
     }
     return $result;
   }
@@ -166,7 +168,7 @@ class DatabaseObject
 
   public function delete()
   {
-    $sql = "DELETE FROM sabirds " . static::$table_name . " ";
+    $sql = "DELETE FROM " . static::$table_name . " ";
     $sql .= "WHERE ID='" . self::$database->escape_string($this->id) . "' ";
     $sql .= "LIMIT 1";
     $result = self::$database->query($sql);

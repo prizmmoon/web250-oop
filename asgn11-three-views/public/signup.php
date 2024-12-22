@@ -2,6 +2,8 @@
 
 require_once('../private/initialize.php');
 
+$session = new Session;
+
 if (is_post_request()) {
 
   $args = $_POST['user'];
